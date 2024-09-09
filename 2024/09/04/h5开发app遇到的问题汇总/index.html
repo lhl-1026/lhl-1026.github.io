@@ -26,7 +26,7 @@
 <meta property="og:description" content="1.手机端没有代理A.在axios请求接口中，也不可以使用代理路径 123&#x2F;&#x2F; baseURL: process.env.VUE_APP_BASE_URL,baseURL: &#x27;http:&#x2F;&#x2F;175.42.33.36:8090&#x2F;JNLotusSeedSys&#x27;,  B.手机端的图片 不可以使用代理路径 2.app的存储app没有cookies这一说法，所以没办法用cookies来存">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-04T02:37:24.000Z">
-<meta property="article:modified_time" content="2024-09-09T02:47:51.582Z">
+<meta property="article:modified_time" content="2024-09-09T03:49:33.685Z">
 <meta property="article:author" content="lhl">
 <meta name="twitter:card" content="summary">
     
@@ -387,8 +387,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-09 10:47:51</span>
-            <span class="mobile">2024-09-09 10:47:51</span>
+            <span class="desktop">2024-09-09 11:49:33</span>
+            <span class="mobile">2024-09-09 11:49:33</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -423,6 +423,15 @@
 <h2 id="3-base64-转文件格式"><a href="#3-base64-转文件格式" class="headerlink" title="3.base64 转文件格式"></a>3.base64 转文件格式</h2><div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">base64ToFormData</span>(<span class="params">url</span>) &#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> base64String = url;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> bytes = <span class="variable language_">window</span>.<span class="title function_">atob</span>(base64String.<span class="title function_">split</span>(<span class="string">&quot;,&quot;</span>)[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> array = [];</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; bytes.<span class="property">length</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">​    array.<span class="title function_">push</span>(bytes.<span class="title function_">charCodeAt</span>(i));</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> blob = <span class="keyword">new</span> <span class="title class_">Blob</span>([<span class="keyword">new</span> <span class="title class_">Uint8Array</span>(array)], &#123; <span class="attr">type</span>: <span class="string">&quot;image/jpeg&quot;</span> &#125;);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> fd = <span class="keyword">new</span> <span class="title class_">FormData</span>();</span><br><span class="line"></span><br><span class="line">   fd.<span class="title function_">append</span>(<span class="string">&quot;file&quot;</span>, blob, <span class="title class_">Date</span>.<span class="title function_">now</span>() + <span class="string">&quot;.jpg&quot;</span>);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> fd;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
 
 <h2 id="4-qq发送apk文件时出现-1后缀"><a href="#4-qq发送apk文件时出现-1后缀" class="headerlink" title="4.qq发送apk文件时出现.1后缀"></a>4.qq发送apk文件时出现.1后缀</h2><p>解决方法：发送方将.apk文件后缀改成大写的.APK</p>
+<h2 id="5-env-development和-env-production-环境配置问题"><a href="#5-env-development和-env-production-环境配置问题" class="headerlink" title="5..env.development和.env.production 环境配置问题"></a>5..env.development<code>和</code>.env.production 环境配置问题</h2><ol>
+<li><p>判断原理</p>
+<p>process.env.NODE_ENV 的值是在构建过程中由 Vue CLI 自动生成的，你不需要手动设置它。在开发环境中，你可以通过 npm run serve 启动开发服务器，而在生产环境中，你可以通过 npm run build 构建项目。在构建过程中，Vue CLI 会自动设置 process.env.NODE_ENV 的值。</p>
+</li>
+<li><p>配置proxy代理服务，用于跨域请求</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">--vue.<span class="property">config</span>.<span class="property">js</span></span><br><span class="line"><span class="comment">// 配置proxy代理服务，用于跨域请求 </span></span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">proxy</span>: &#123;</span><br><span class="line">      [process.<span class="property">env</span>.<span class="property">VUE_APP_BASE_URL</span>]: &#123;</span><br><span class="line">        <span class="comment">// target: `http://localhost:8090/JNLotusSeedSys`,</span></span><br><span class="line">        <span class="attr">target</span>: <span class="string">`http://175.42.33.36:8090/JNLotusSeedSys`</span>,</span><br><span class="line"></span><br><span class="line">        <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">pathRewrite</span>: &#123;</span><br><span class="line">          [<span class="string">&#x27;^&#x27;</span> + process.<span class="property">env</span>.<span class="property">VUE_APP_BASE_URL</span>]: <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="string">&quot;/prod-api&quot;</span>: &#123;</span><br><span class="line">        <span class="comment">// target: `http://localhost:8090/JNLotusSeedSys`,</span></span><br><span class="line">        <span class="attr">target</span>: <span class="string">`http://175.42.33.36:8090/JNLotusSeedSys`</span>,</span><br><span class="line">        <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="comment">// rewrite: (path) =&gt; path.replace(/^\/prod-api/, &quot;&quot;) // 将请求中/api用空值替换重写，根据实际业务修改</span></span><br><span class="line">        <span class="attr">pathRewrite</span>: &#123;</span><br><span class="line">          [<span class="string">&#x27;^&#x27;</span> + <span class="string">&#x27;/prod-api&#x27;</span>]: <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">webSocketServer</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></div>
+</li>
+<li></li>
+</ol>
 
         </div>
 
@@ -437,7 +446,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-09 10:47:51
+                    :</strong> 2024-09-09 11:49:33
             </li>
         
         <li>
@@ -538,7 +547,7 @@
     <div class="post-toc">
         <div class="toc-title">目录</div>
         <div class="page-title">h5开发app遇到的问题汇总</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%89%8B%E6%9C%BA%E7%AB%AF%E6%B2%A1%E6%9C%89%E4%BB%A3%E7%90%86"><span class="nav-text">1.手机端没有代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-app%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-text">2.app的存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-base64-%E8%BD%AC%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="nav-text">3.base64 转文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-qq%E5%8F%91%E9%80%81apk%E6%96%87%E4%BB%B6%E6%97%B6%E5%87%BA%E7%8E%B0-1%E5%90%8E%E7%BC%80"><span class="nav-text">4.qq发送apk文件时出现.1后缀</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%89%8B%E6%9C%BA%E7%AB%AF%E6%B2%A1%E6%9C%89%E4%BB%A3%E7%90%86"><span class="nav-text">1.手机端没有代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-app%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-text">2.app的存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-base64-%E8%BD%AC%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="nav-text">3.base64 转文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-qq%E5%8F%91%E9%80%81apk%E6%96%87%E4%BB%B6%E6%97%B6%E5%87%BA%E7%8E%B0-1%E5%90%8E%E7%BC%80"><span class="nav-text">4.qq发送apk文件时出现.1后缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-env-development%E5%92%8C-env-production-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98"><span class="nav-text">5..env.development和.env.production 环境配置问题</span></a></li></ol>
 
     </div>
 </div>
