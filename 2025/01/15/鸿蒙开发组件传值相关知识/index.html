@@ -13,20 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/11/11/微信小程序附件预览及下载/"/>
+    <link rel="canonical" href="http://example.com/2025/01/15/鸿蒙开发组件传值相关知识/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="1.代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849&#x2F;&#x2F; 本地路径开头使用file:&#x2F;&#x2F;，跟上手机文件本地目录storage&#x2F;emulated&#x2F;0，				&#x2F;&#x2F; 这时用户文件管理器能看到的了，之后创建 连信 作为文件夹，				&#x2F;&#x2F; 后缀是用于文件命名和格式修改">
+        <meta name="description" content="1.@State和@Prop的区别@State： 主要是装饰给组件自己使用的数据，效果：能让成员变量的值改变后，界面也能刷新@Prop： 主要是用在作为子组件时，用来装饰由父传递过来的数据，效果：能让父的数据改变子也能接收到注意：在ArkTS中，即使父传递的是引用类型的数据，若不加@Prop修饰，一样会导致父的数据改变子里不会变 2.总结@Prop与@Link相同点：都是用在子组件，用来接收父传递">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序附件预览及下载">
-<meta property="og:url" content="http://example.com/2024/11/11/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%99%84%E4%BB%B6%E9%A2%84%E8%A7%88%E5%8F%8A%E4%B8%8B%E8%BD%BD/index.html">
+<meta property="og:title" content="鸿蒙开发组件传值相关知识">
+<meta property="og:url" content="http://example.com/2025/01/15/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849&#x2F;&#x2F; 本地路径开头使用file:&#x2F;&#x2F;，跟上手机文件本地目录storage&#x2F;emulated&#x2F;0，				&#x2F;&#x2F; 这时用户文件管理器能看到的了，之后创建 连信 作为文件夹，				&#x2F;&#x2F; 后缀是用于文件命名和格式修改">
+<meta property="og:description" content="1.@State和@Prop的区别@State： 主要是装饰给组件自己使用的数据，效果：能让成员变量的值改变后，界面也能刷新@Prop： 主要是用在作为子组件时，用来装饰由父传递过来的数据，效果：能让父的数据改变子也能接收到注意：在ArkTS中，即使父传递的是引用类型的数据，若不加@Prop修饰，一样会导致父的数据改变子里不会变 2.总结@Prop与@Link相同点：都是用在子组件，用来接收父传递">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-11T02:34:23.000Z">
-<meta property="article:modified_time" content="2024-11-11T02:41:46.229Z">
+<meta property="article:published_time" content="2025-01-15T08:30:52.000Z">
+<meta property="article:modified_time" content="2025-01-15T08:48:22.197Z">
 <meta property="article:author" content="lhl">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +40,7 @@
     
     <title>
         
-            微信小程序附件预览及下载 -
+            鸿蒙开发组件传值相关知识 -
         
         lhl
     </title>
@@ -359,7 +359,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">微信小程序附件预览及下载</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">鸿蒙开发组件传值相关知识</h1>
                 </div>
             
             </div>
@@ -380,19 +380,35 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-11-11 10:34:23</span>
-        <span class="mobile">2024-11-11 10:34:23</span>
+        <span class="desktop">2025-01-15 16:30:52</span>
+        <span class="mobile">2025-01-15 16:30:52</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-11 10:41:46</span>
-            <span class="mobile">2024-11-11 10:41:46</span>
+            <span class="desktop">2025-01-15 16:48:22</span>
+            <span class="mobile">2025-01-15 16:48:22</span>
             <span class="hover-info">更新</span>
         </span>
     
 
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">鸿蒙开发</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
     
     
 
@@ -415,8 +431,18 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="1-代码实现"><a href="#1-代码实现" class="headerlink" title="1.代码实现"></a>1.代码实现</h1><div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本地路径开头使用file://，跟上手机文件本地目录storage/emulated/0，</span></span><br><span class="line">				<span class="comment">// 这时用户文件管理器能看到的了，之后创建 连信 作为文件夹，</span></span><br><span class="line">				<span class="comment">// 后缀是用于文件命名和格式修改，大家可以使用变量。</span></span><br><span class="line">				<span class="comment">//下载文件</span></span><br><span class="line">				uni.<span class="title function_">downloadFile</span>(&#123; <span class="comment">//只能是GET请求</span></span><br><span class="line">					<span class="attr">url</span>: indexConfig.<span class="property">baseUrl</span> + <span class="string">&#x27;/api&#x27;</span> + item, <span class="comment">//请求地址(后台返回的码流地址)</span></span><br><span class="line">					<span class="comment">// filePath:&quot;file://storage/emulated/0/text&quot;,</span></span><br><span class="line">					<span class="attr">success</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">						<span class="comment">//下载成功</span></span><br><span class="line">						<span class="keyword">if</span> (res.<span class="property">statusCode</span> === <span class="number">200</span>) &#123;</span><br><span class="line">							<span class="comment">//保存文件</span></span><br><span class="line">							<span class="keyword">let</span> tempFile = res.<span class="property">tempFilePath</span>;</span><br><span class="line">							<span class="comment">//保存成功之后 打开文件</span></span><br><span class="line">							uni.<span class="title function_">getFileSystemManager</span>().<span class="title function_">saveFile</span>(&#123;</span><br><span class="line">								<span class="attr">tempFilePath</span>: tempFile,</span><br><span class="line">								<span class="comment">// filePath: wx.env.USER_DATA_PATH + &#x27;/&#x27; + &#x27;上传成员.pdf&#x27;,//自定义文件名</span></span><br><span class="line">								<span class="title function_">success</span>(<span class="params">res</span>) &#123;</span><br><span class="line">									<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;res&#x27;</span>, res)</span><br><span class="line">									uni.<span class="title function_">openDocument</span>(&#123;</span><br><span class="line">										<span class="attr">filePath</span>: res.<span class="property">savedFilePath</span>,</span><br><span class="line">										<span class="attr">showMenu</span>: <span class="literal">true</span>, <span class="comment">//是否可以分享</span></span><br><span class="line">										<span class="attr">success</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">											uni.<span class="title function_">hideLoading</span>()</span><br><span class="line">											<span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">											<span class="comment">// uni.showToast(&#123;</span></span><br><span class="line">											<span class="comment">// 	title: &#x27;点击右上角下载文件&#x27;,</span></span><br><span class="line">											<span class="comment">// 	icon: &quot;success&quot;</span></span><br><span class="line">											<span class="comment">// &#125;)</span></span><br><span class="line">										&#125;,</span><br><span class="line">										<span class="attr">fail</span>: <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">											uni.<span class="title function_">showToast</span>(&#123;</span><br><span class="line">												<span class="attr">title</span>: <span class="string">&#x27;打开失败&#x27;</span>,</span><br><span class="line">												<span class="attr">icon</span>: <span class="string">&quot;error&quot;</span></span><br><span class="line">											&#125;)</span><br><span class="line">										&#125;</span><br><span class="line">									&#125;)</span><br><span class="line"></span><br><span class="line">								&#125;</span><br><span class="line">							&#125;)</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;,</span><br><span class="line">					<span class="attr">fail</span>: <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">						<span class="variable language_">console</span>.<span class="title function_">log</span>(e, <span class="string">&#x27;文件下载失败&#x27;</span>)</span><br><span class="line">						uni.<span class="title function_">showToast</span>(&#123;</span><br><span class="line">							<span class="attr">title</span>: <span class="string">&#x27;文件下载失败&#x27;</span>,</span><br><span class="line">							<span class="attr">icon</span>: <span class="string">&quot;error&quot;</span>,</span><br><span class="line">						&#125;)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;);</span><br></pre></td></tr></table></figure></div>
+            <h1 id="1-State和-Prop的区别"><a href="#1-State和-Prop的区别" class="headerlink" title="1.@State和@Prop的区别"></a>1.@State和@Prop的区别</h1><p><strong>@State：</strong> 主要是装饰给组件自己使用的数据，效果：能让成员变量的值改变后，界面也能刷新<br><strong>@Prop</strong>： 主要是用在作为子组件时，用来装饰由父传递过来的数据，效果：能让父的数据改变子也能接收到<br>注意：在ArkTS中，即使父传递的是引用类型的数据，若不加@Prop修饰，一样会导致父的数据改变子里不会变</p>
+<h1 id="2-总结-Prop与-Link"><a href="#2-总结-Prop与-Link" class="headerlink" title="2.总结@Prop与@Link"></a>2.总结@Prop与@Link</h1><h2 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h2><p>都是用在子组件，用来接收父传递过来的数据，<br>都可以实现父改变数据后同步给子</p>
+<h2 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h2><p>初始化值不同：<br>@Prop需要初始化值，相当于给默认值。可以实现，父如果传了就用父的数据，如果没传则用默认值<br>@Link不能初始化，相当于必须要父传递数据了才有数据<br>同步给父不同<br>@Prop修饰的数据，子里改变了不会同步给父<br>@Link修饰的数据，子里改变了会同步给父</p>
+<h1 id="3-Link缺陷："><a href="#3-Link缺陷：" class="headerlink" title="3.@Link缺陷："></a>3.@Link缺陷：</h1><p>语法限制，@Link只能接收父组件里声明的第一层成员变量</p>
+<p>什么叫第一层？</p>
+<p>就好比一个数组，数组里全是对象。对于数组而言即为第一层，数组里的每个对象称之为第二层，以此类推<br>再好比一个嵌套对象。即对象里有个属性又是对象，那么外层的称之为第一层，里面的属性即为第二层，以此类推<br>所以上述报错里写的item相当于就是数组里的对象，也即第二层，所以报错</p>
+<p>出现这个语法限制的根本原因是：目前的鸿蒙开发中，默认情况下无法监听到第二层的改动。而@Link又要实现双向同步，你都无法监听到改动，又如何完成双向同步呢？</p>
+<p>所以鸿蒙也给了解决方案：使用@Observed加@ObjectLink来解决。但是，解决方案其实用起来也很麻烦繁琐，非常不人性化。</p>
+<h1 id="4-Builder"><a href="#4-Builder" class="headerlink" title="4.@Builder"></a>4.@Builder</h1><p>@Builder是用来装饰函数的，被它装饰的函数称之为自定义构造函数，<br>作用：有些时候，一段UI元素可能需要被复用。即可使用@Builder装饰的函数进行封装</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意：写到build函数外面（也就是写成员变量的位置）</span></span><br><span class="line">@<span class="title class_">Builder</span> <span class="comment">// @Builder也可以跟函数名同一行，但是鸿蒙语法规范建议写到上面</span></span><br><span class="line">函数名 (参数) &#123;</span><br><span class="line">  <span class="comment">// 封装的UI元素</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">使用时直接像调用函数一样用即可，例如</span><br><span class="line"><span class="title function_">build</span> () &#123;</span><br><span class="line"> </span><br><span class="line"> <span class="title class_">Column</span>(&#123; <span class="attr">space</span>: <span class="number">20</span> &#125;) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">myUI</span>()</span><br><span class="line">    </span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">myUI</span>()</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
+<p><strong>跟组件的区别：@Builder更轻量，一般只封装本页面里的UI元素。而组件可能有自己的状态数据且能复用在多个页面,所以组件的使用范围更加广泛</strong></p>
 
         </div>
 
@@ -424,18 +450,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 微信小程序附件预览及下载</li>
+        <li><strong>标题:</strong> 鸿蒙开发组件传值相关知识</li>
         <li><strong>作者:</strong> lhl</li>
         <li><strong>创建于
-                :</strong> 2024-11-11 10:34:23</li>
+                :</strong> 2025-01-15 16:30:52</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-11-11 10:41:46
+                    :</strong> 2025-01-15 16:48:22
             </li>
         
         <li>
-            <strong>链接:</strong> https://lhl-1026.github.io/2024/11/11/微信小程序附件预览及下载/
+            <strong>链接:</strong> https://lhl-1026.github.io/2025/01/15/鸿蒙开发组件传值相关知识/
         </li>
         <li>
             <strong>
@@ -463,13 +489,13 @@
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/2024/11/11/vue-pdf%E5%B0%81%E8%A3%85%E7%9A%84pdf%E7%BB%84%E4%BB%B6/"
+                        href="/2025/01/15/%E9%B8%BF%E8%92%99%E5%86%85%E7%BD%AE%E7%9A%84%E7%BB%84%E4%BB%B6/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">vue-pdf封装的pdf组件</span>
+                                <span class="post-nav-title-item">鸿蒙内置的组件</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -479,10 +505,10 @@
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/11/11/%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0/"
+                        href="/2025/01/08/%E5%B0%81%E8%A3%85%E4%B8%8B%E6%8B%89%E6%A1%86%E6%A0%91%E5%8D%95%E9%80%89%E7%BB%84%E4%BB%B6/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">自适应布局实现</span>
+                                <span class="post-nav-title-item">封装下拉框树单选组件</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -546,8 +572,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">目录</div>
-        <div class="page-title">微信小程序附件预览及下载</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">1.代码实现</span></a></li></ol>
+        <div class="page-title">鸿蒙开发组件传值相关知识</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-State%E5%92%8C-Prop%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">1.@State和@Prop的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%80%BB%E7%BB%93-Prop%E4%B8%8E-Link"><span class="nav-text">2.总结@Prop与@Link</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%90%8C%E7%82%B9%EF%BC%9A"><span class="nav-text">相同点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%82%B9%EF%BC%9A"><span class="nav-text">不同点：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Link%E7%BC%BA%E9%99%B7%EF%BC%9A"><span class="nav-text">3.@Link缺陷：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Builder"><span class="nav-text">4.@Builder</span></a></li></ol>
 
     </div>
 </div>
